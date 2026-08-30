@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm2Market — Farm to Doorstep</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="mark">🌾</span> Farm2Market</div>
+  <nav><span class="small-note">Farmer / FPO &rarr; Marketplace &rarr; Doorstep</span></nav>
+</div>
+
+<div class="shell">
+  <section class="hero">
+    <span class="eyebrow">Direct from field to fork</span>
+    <h1>One platform connecting Farmers &amp; FPOs directly to bulk and individual buyers.</h1>
+    <p>List produce in minutes, get matched by a smart order engine, and let optimized logistics
+       handle pickup, batching and delivery — with transparent payment settlement for everyone
+       in the chain.</p>
+  </section>
+
+  <div class="grid grid-2" style="align-items:flex-start;">
+    <div class="card">
+      <div class="tabs">
+        <div class="tab active" data-tab="login">Log in</div>
+        <div class="tab" data-tab="register">Register</div>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="login-form">
+        <label>Email</label>
+        <input type="email" id="login-email" required placeholder="you@example.com">
+        <label>Password</label>
+        <input type="password" id="login-password" required placeholder="••••••••">
+        <button class="btn full" style="margin-top:20px;" type="submit">Log in</button>
+        <div id="login-error"></div>
+      </form>
+
+      <!-- REGISTER -->
+      <form id="register-form" style="display:none;">
+        <label>I am a</label>
+        <select id="reg-role">
+          <option value="farmer">Farmer / FPO</option>
+          <option value="buyer">Buyer</option>
+          <option value="logistics">Logistics Partner Admin</option>
+        </select>
+
+        <div class="field-row">
+          <div>
+            <label>Full name</label>
+            <input type="text" id="reg-name" required>
+          </div>
+          <div>
+            <label>Phone</label>
+            <input type="text" id="reg-phone">
+          </div>
+        </div>
+
+        <label>Email</label>
+        <input type="email" id="reg-email" required>
+        <label>Password</label>
+        <input type="password" id="reg-password" required minlength="6">
+
+        <!-- Farmer-only fields -->
+        <div id="farmer-fields" style="display:none;">
+          <label>Farm / FPO name</label>
+          <input type="text" id="reg-farm-name">
+          <label>Pickup location</label>
+          <input type="text" id="reg-pickup-location" placeholder="Village, District">
+        </div>
+
+        <!-- Buyer-only fields -->
+        <div id="buyer-fields" style="display:none;">
+          <label>Buyer type</label>
+          <select id="reg-buyer-type">
+            <option value="individual">Individual / Household</option>
+            <option value="bulk">Bulk (restaurant, hotel, retailer, institution)</option>
+          </select>
+          <label>Business name (bulk buyers)</label>
+          <input type="text" id="reg-business-name">
+          <label>Default delivery location</label>
+          <input type="text" id="reg-default-location" placeholder="Area, City">
+        </div>
+
+        <button class="btn full" style="margin-top:20px;" type="submit">Create account</button>
+        <div id="register-error"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>How it flows</h3>
+      <ol class="small-note" style="line-height:2;">
+        <li><strong style="color:var(--paper)">Farmer/FPO</strong> registers and lists produce — quantity, quality, available date, pickup location.</li>
+        <li><strong style="color:var(--paper)">Buyers</strong> (bulk or individual) browse the marketplace and place an order.</li>
+        <li>The <strong style="color:var(--paper)">Smart Order Engine</strong> matches inventory, checks location &amp; delivery time, and batches nearby individual orders.</li>
+        <li><strong style="color:var(--paper)">Smart Logistics Selection</strong> picks the best/cheapest partner and optimizes the pickup + delivery route.</li>
+        <li>Delivery is confirmed with an <strong style="color:var(--paper)">OTP</strong>, which triggers automatic <strong style="color:var(--paper)">payment settlement</strong> for the farmer and logistics partner.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<footer>Farm2Market — demo full-stack reference implementation (FastAPI + PostgreSQL)</footer>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: f2m_user
+      POSTGRES_PASSWORD: f2m_password
+      POSTGRES_DB: farm2market
+    ports:
+      - "5432:5432"
+    volumes:
+      - f2m_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U f2m_user -d farm2market"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://f2m_user:f2m_password@db:5432/farm2market
+      SECRET_KEY: change-this-to-a-long-random-string
+    ports:
+      - "8000:8000"
+
+volumes:
+  f2m_pgdata:
