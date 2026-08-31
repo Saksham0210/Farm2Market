@@ -244,15 +244,14 @@ async function loadOrderExtras(order){
     html += `<div class="small-note" style="margin-top:10px;">Route: ${delivery.route_sequence || "—"}</div>`;
     if(delivery.distance_km) html += `<div class="small-note">Distance: ${delivery.distance_km} km · Delivery cost: ₹${delivery.delivery_cost ?? "—"}</div>`;
 
-    if(delivery.status !== "delivered" && (order.status === "out_for_delivery")){
-      html += `
-        <div class="split-view" style="margin-top:10px;">
-          <input type="text" id="otp-${order.id}" placeholder="Enter delivery OTP" style="max-width:180px;">
-          <button class="btn small" onclick="confirmDelivery('${order.id}')">Confirm delivery</button>
-        </div>
-        <div class="small-note">Your delivery OTP (shown here for this demo, normally sent via SMS): <span class="mono">${delivery.otp || "—"}</span></div>
-      `;
-    }
+    if(delivery.status !== "delivered" && order.status === "out_for_delivery"){
+  html += `
+    <div class="small-note" style="margin-top:10px;">
+      Your delivery OTP:
+      <span class="mono">${delivery.otp || "—"}</span>
+    </div>
+  `;
+}
   } catch(err){
     // no delivery record yet - fine, still waiting on batching/matching
   }
