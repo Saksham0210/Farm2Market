@@ -351,7 +351,37 @@ async function loadLogisticsOrders(){
       `;
       return;
     }
+const statusPriority = {
+  out_for_delivery: 0,
+  batched: 1,
+  matched: 2,
+  placed: 3,
+  delivered: 4,
+  paid: 5
+};
 
+const slotTime = {
+  morning: "09:00",
+  afternoon: "14:00",
+  evening: "19:00"
+};
+
+orders.sort((a, b) => {
+  const priorityA = statusPriority[a.status] ?? 99;
+  const priorityB = statusPriority[b.status] ?? 99;
+
+  if (priorityA !== priorityB) {
+    return priorityA - priorityB;
+  }
+
+  const [dateA, timeA] = a.delivery_slot.split("|");
+  const [dateB, timeB] = b.delivery_slot.split("|");
+
+  const datetimeA = new Date(`${dateA}T${slotTime[timeA] || "12:00"}`);
+  const datetimeB = new Date(`${dateB}T${slotTime[timeB] || "12:00"}`);
+
+  return datetimeA - datetimeB;
+});
     list.innerHTML = orders.map(o => `
       <div class="order-row" style="margin-bottom:16px;">
 
@@ -387,7 +417,7 @@ ${o.status === "out_for_delivery" ? `
     Confirm Delivery
   </button>
 ` : ""}
-
+      </div>
       </div>
     `).join("");
     for (const o of orders) {
