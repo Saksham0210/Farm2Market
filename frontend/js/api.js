@@ -1,7 +1,7 @@
 // Point this at wherever uvicorn is running.
-const API_BASE = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+cconst API_BASE = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
   ? "http://localhost:8000"
-  : "http://localhost:8000"; // change to your deployed backend URL
+  : "https://farm2market-jxzz.onrender.com";
 
 const Auth = {
   getToken(){ return localStorage.getItem("f2m_token"); },
