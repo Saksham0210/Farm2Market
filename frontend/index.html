@@ -3,109 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farm2Market — Farm to Doorstep</title>
+<title>Farm Circle — Farmer to Consumer</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <div class="topbar">
-  <div class="brand"><span class="mark">🌾</span> Farm2Market</div>
-  <nav><span class="small-note">Farmer / FPO &rarr; Marketplace &rarr; Doorstep</span></nav>
+  <div class="brand">
+    <span class="mark">🌱</span>
+    Farm Circle
+  </div>
+
+  <nav>
+    <span class="small-note">
+      Farmers → Marketplace → Consumers
+    </span>
+  </nav>
 </div>
 
 <div class="shell">
+
   <section class="hero">
-    <span class="eyebrow">Direct from field to fork</span>
-    <h1>One platform connecting Farmers &amp; FPOs directly to bulk and individual buyers.</h1>
-    <p>List produce in minutes, get matched by a smart order engine, and let optimized logistics
-       handle pickup, batching and delivery — with transparent payment settlement for everyone
-       in the chain.</p>
+
+    <span class="eyebrow">
+      FARM TO HOME
+    </span>
+
+    <h1>
+      Fresh products directly from farmers.
+    </h1>
+
+    <p>
+      Farm Circle connects farmers and FPOs directly with consumers
+      and bulk buyers. Farmers can list their products while buyers
+      can browse products, place orders and get them delivered.
+    </p>
+
   </section>
 
+
   <div class="grid grid-2" style="align-items:flex-start;">
+
+    <!-- LOGIN / REGISTER -->
+
     <div class="card">
+
       <div class="tabs">
-        <div class="tab active" data-tab="login">Log in</div>
-        <div class="tab" data-tab="register">Register</div>
+
+        <div class="tab active" data-tab="login">
+          Log in
+        </div>
+
+        <div class="tab" data-tab="register">
+          Create account
+        </div>
+
       </div>
 
+
       <!-- LOGIN -->
+
       <form id="login-form">
+
         <label>Email</label>
-        <input type="email" id="login-email" required placeholder="you@example.com">
+
+        <input
+          type="email"
+          id="login-email"
+          required
+          placeholder="you@example.com"
+        >
+
+
         <label>Password</label>
-        <input type="password" id="login-password" required placeholder="••••••••">
-        <button class="btn full" style="margin-top:20px;" type="submit">Log in</button>
+
+        <input
+          type="password"
+          id="login-password"
+          required
+          placeholder="••••••••"
+        >
+
+
+        <button
+          class="btn full"
+          style="margin-top:20px;"
+          type="submit"
+        >
+          Log in
+        </button>
+
         <div id="login-error"></div>
+
       </form>
+
+
 
       <!-- REGISTER -->
+
       <form id="register-form" style="display:none;">
+
         <label>I am a</label>
+
         <select id="reg-role">
-          <option value="farmer">Farmer / FPO</option>
-          <option value="buyer">Buyer</option>
-          <option value="logistics">Logistics Partner Admin</option>
+
+          <option value="farmer">
+            Farmer / FPO
+          </option>
+
+          <option value="buyer">
+            Consumer / Buyer
+          </option>
+
+          <option value="logistics">
+            Logistics Partner Admin
+          </option>
+
         </select>
 
+
         <div class="field-row">
+
           <div>
+
             <label>Full name</label>
-            <input type="text" id="reg-name" required>
+
+            <input
+              type="text"
+              id="reg-name"
+              required
+            >
+
           </div>
+
+
           <div>
+
             <label>Phone</label>
-            <input type="text" id="reg-phone">
+
+            <input
+              type="text"
+              id="reg-phone"
+            >
+
           </div>
+
         </div>
+
 
         <label>Email</label>
-        <input type="email" id="reg-email" required>
+
+        <input
+          type="email"
+          id="reg-email"
+          required
+        >
+
+
         <label>Password</label>
-        <input type="password" id="reg-password" required minlength="6">
 
-        <!-- Farmer-only fields -->
+        <input
+          type="password"
+          id="reg-password"
+          required
+          minlength="6"
+        >
+
+
+
+        <!-- FARMER FIELDS -->
+
         <div id="farmer-fields" style="display:none;">
-          <label>Farm / FPO name</label>
-          <input type="text" id="reg-farm-name">
-          <label>Pickup location</label>
-          <input type="text" id="reg-pickup-location" placeholder="Village, District">
+
+          <label>
+            Farm / FPO name
+          </label>
+
+          <input
+            type="text"
+            id="reg-farm-name"
+          >
+
+
+          <label>
+            Pickup location
+          </label>
+
+          <input
+            type="text"
+            id="reg-pickup-location"
+            placeholder="Village, District"
+          >
+
         </div>
 
-        <!-- Buyer-only fields -->
+
+
+        <!-- BUYER FIELDS -->
+
         <div id="buyer-fields" style="display:none;">
-          <label>Buyer type</label>
+
+          <label>
+            Buyer type
+          </label>
+
           <select id="reg-buyer-type">
-            <option value="individual">Individual / Household</option>
-            <option value="bulk">Bulk (restaurant, hotel, retailer, institution)</option>
+
+            <option value="individual">
+              Individual / Household
+            </option>
+
+            <option value="bulk">
+              Bulk Buyer / Business
+            </option>
+
           </select>
-          <label>Business name (bulk buyers)</label>
-          <input type="text" id="reg-business-name">
-          <label>Default delivery location</label>
-          <input type="text" id="reg-default-location" placeholder="Area, City">
+
+
+          <label>
+            Business name
+          </label>
+
+          <input
+            type="text"
+            id="reg-business-name"
+          >
+
+
+          <label>
+            Default delivery location
+          </label>
+
+          <input
+            type="text"
+            id="reg-default-location"
+            placeholder="Area, City"
+          >
+
         </div>
 
-        <button class="btn full" style="margin-top:20px;" type="submit">Create account</button>
+
+        <button
+          class="btn full"
+          style="margin-top:20px;"
+          type="submit"
+        >
+          Create account
+        </button>
+
+
         <div id="register-error"></div>
+
       </form>
+
     </div>
+
+
+
+    <!-- HOW FARM CIRCLE WORKS -->
 
     <div class="card">
-      <h3>How it flows</h3>
-      <ol class="small-note" style="line-height:2;">
-        <li><strong style="color:var(--paper)">Farmer/FPO</strong> registers and lists produce — quantity, quality, available date, pickup location.</li>
-        <li><strong style="color:var(--paper)">Buyers</strong> (bulk or individual) browse the marketplace and place an order.</li>
-        <li>The <strong style="color:var(--paper)">Smart Order Engine</strong> matches inventory, checks location &amp; delivery time, and batches nearby individual orders.</li>
-        <li><strong style="color:var(--paper)">Smart Logistics Selection</strong> picks the best/cheapest partner and optimizes the pickup + delivery route.</li>
-        <li>Delivery is confirmed with an <strong style="color:var(--paper)">OTP</strong>, which triggers automatic <strong style="color:var(--paper)">payment settlement</strong> for the farmer and logistics partner.</li>
+
+      <h3>
+        How Farm Circle works
+      </h3>
+
+
+      <ol
+        class="small-note"
+        style="line-height:2;"
+      >
+
+        <li>
+          Farmers and FPOs create an account and
+          list their products.
+        </li>
+
+        <li>
+          Consumers browse available products
+          directly from farmers.
+        </li>
+
+        <li>
+          Buyers add products to their cart and
+          place an order.
+        </li>
+
+        <li>
+          The platform manages pickup and delivery
+          through logistics partners.
+        </li>
+
+        <li>
+          Farmers receive orders directly without
+          unnecessary middlemen.
+        </li>
+
       </ol>
+
     </div>
+
   </div>
+
 </div>
 
-<footer>Farm2Market — demo full-stack reference implementation (FastAPI + PostgreSQL)</footer>
+
+<footer>
+  Farm Circle — connecting farmers directly with consumers.
+</footer>
+
 
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
+
 </body>
 </html>
