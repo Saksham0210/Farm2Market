@@ -236,7 +236,56 @@ async function loadOrderExtras(order){
   let html = "";
 
   if(order.status === "batched"){
-    html += `<button class="btn secondary small" onclick="requestDirect('${order.id}')">Don't want to wait? Get direct delivery (extra cost)</button>`;
+    html += `
+      <div class="batch-window">
+        <strong>🟢 Batching in progress</strong>
+
+        <div class="small-note" style="margin-top:8px;">
+          Your order is being grouped with compatible nearby deliveries.
+        </div>
+
+        <div style="margin-top:12px;">
+  <strong>Batch progress</strong>
+
+  ${
+    order.batch
+      ? `
+        <div style="margin-top:6px; font-size:18px;">
+          ${Number(order.batch.total_weight_kg).toFixed(1)} kg / 25 kg
+        </div>
+
+        <div class="small-note" style="margin-top:4px;">
+          ${Math.max(
+            25 - Number(order.batch.total_weight_kg),
+            0
+          ).toFixed(1)} kg more needed
+        </div>
+      `
+      : `
+        <div class="small-note" style="margin-top:6px;">
+          Waiting for compatible orders...
+        </div>
+      `
+  }
+</div>
+
+        <div class="small-note" style="margin-top:8px;">
+          📍 Delivery area: ${order.delivery_location}
+        </div>
+
+        <div class="small-note">
+          🕐 Delivery slot: ${order.delivery_slot}
+        </div>
+
+        <button
+          class="btn secondary small"
+          style="margin-top:12px;"
+          onclick="requestDirect('${order.id}')"
+        >
+          Don't want to wait? Get direct delivery (extra cost)
+        </button>
+      </div>
+    `;
   }
 
   try{

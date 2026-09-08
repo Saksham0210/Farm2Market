@@ -3,7 +3,15 @@ from typing import Optional, List
 
 from pydantic import BaseModel, EmailStr, Field
 
-from .models import UserRole, BuyerType, ProduceStatus, OrderType, OrderStatus, VehicleType, DeliveryStatus
+from .models import (
+    UserRole,
+    BuyerType,
+    ProduceStatus,
+    OrderType,
+    OrderStatus,
+    VehicleType,
+    DeliveryStatus,
+)
 
 
 # ---------- Auth / Users ----------
@@ -106,6 +114,19 @@ class OrderItemOut(BaseModel):
         from_attributes = True
 
 
+# ---------- Batch ----------
+
+class DeliveryBatchOut(BaseModel):
+    id: str
+    area_key: str
+    delivery_slot: str
+    status: str
+    total_weight_kg: float
+
+    class Config:
+        from_attributes = True
+
+
 class OrderOut(BaseModel):
     id: str
     buyer_id: str
@@ -115,6 +136,7 @@ class OrderOut(BaseModel):
     status: OrderStatus
     total_amount: float
     batch_id: Optional[str] = None
+    batch: Optional[DeliveryBatchOut] = None
     items: List[OrderItemOut] = []
     created_at: datetime
 
