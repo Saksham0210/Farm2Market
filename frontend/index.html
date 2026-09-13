@@ -6,125 +6,493 @@
 <title data-i18n="page_title">Farm Circle — Farmer to Consumer</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
 <div class="topbar">
-  <div class="brand"><span class="mark">🌱</span><span data-i18n="brand">Farm Circle</span></div>
+  <div class="brand">
+    <span class="mark">🌱</span>
+    <span data-i18n="brand">Farm Circle</span>
+  </div>
+
   <nav>
-
     <select id="lang-select">
-    <option value="en">English</option>
-    <option value="hi">हिन्दी</option>
-    <option value="mr">मराठी</option>
-    <option value="ta">தமிழ்</option>
-    <option value="te">తెలుగు</option>
-    <option value="bn">বাংলা</option>
-    <option value="gu">ગુજરાતી</option>
-    <option value="kn">ಕನ್ನಡ</option>
-    <option value="ml">മലയാളം</option>
-    <option value="pa">ਪੰਜਾਬੀ</option>
-</select>
-
-    <span class="small-note" data-i18n="nav_note">Farmers → Marketplace → Consumers</span>
-  
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="mr">मराठी</option>
+      <option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option>
+      <option value="bn">বাংলা</option>
+      <option value="gu">ગુજરાતી</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+    </select>
   </nav>
 </div>
 
+
 <div class="shell">
+
   <section class="hero">
-    <span class="eyebrow" data-i18n="hero_eyebrow">FARM TO HOME</span>
-    <h1 data-i18n="hero_h1">Fresh products directly from farmers.</h1>
-    <p data-i18n="hero_description">Farm Circle connects farmers and FPOs directly with consumers and bulk buyers. Farmers can list their products while buyers can browse products, place orders and get them delivered.</p>
+
+    <span class="eyebrow" data-i18n="hero_eyebrow">
+      FARM TO HOME
+    </span>
+
+    <h1 data-i18n="hero_h1">
+      Fresh products directly from farmers.
+    </h1>
+
+    <p data-i18n="hero_description">
+      Farm Circle connects farmers and FPOs directly with consumers and bulk buyers.
+      Farmers can list their products while buyers can browse products, place orders
+      and get them delivered.
+    </p>
+
   </section>
 
-  
 
   <div class="grid grid-2" style="align-items:flex-start;">
+
     <div class="card">
+
       <div class="tabs">
-        <div class="tab active" data-tab="login" data-i18n="tab_login">Log in</div>
-        <div class="tab" data-tab="register" data-i18n="tab_register">Create account</div>
+        <div
+          class="tab active"
+          data-tab="login"
+          data-i18n="tab_login"
+        >
+          Log in
+        </div>
+
+        <div
+          class="tab"
+          data-tab="register"
+          data-i18n="tab_register"
+        >
+          Create account
+        </div>
       </div>
+
+
+      <!-- LOGIN FORM -->
 
       <form id="login-form">
-        <label data-i18n="label_email">Email</label>
-        <input type="email" id="login-email" data-i18n-placeholder="placeholder_email" placeholder="you@example.com">
-        <label data-i18n="label_password">Password</label>
-        <input type="password" id="login-password" data-i18n-placeholder="placeholder_password" required placeholder="••••••••">
-        <button class="btn full" data-i18n="btn_login" style="margin-top:20px;" type="submit">Log in</button>
+
+        <label data-i18n="label_email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="login-email"
+          data-i18n-placeholder="placeholder_email"
+          placeholder="you@example.com"
+        >
+
+
+        <label data-i18n="label_password">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="login-password"
+          data-i18n-placeholder="placeholder_password"
+          required
+          placeholder="••••••••"
+        >
+
+
+        <button
+          class="btn full"
+          data-i18n="btn_login"
+          style="margin-top:20px;"
+          type="submit"
+        >
+          Log in
+        </button>
+
         <div id="login-error"></div>
+
       </form>
+
+
+      <!-- REGISTER FORM -->
 
       <form id="register-form" style="display:none;">
-        <label data-i18n="label_role">I am a</label>
+
+        <label data-i18n="label_role">
+          I am a
+        </label>
+
         <select id="reg-role">
-          <option value="farmer" data-i18n="role_farmer">Farmer / FPO</option>
-          <option value="buyer" data-i18n="role_buyer">Consumer / Buyer</option>
-          <option value="logistics" data-i18n="role_logistics">Logistics Partner Admin</option>
+
+          <option
+            value="farmer"
+            data-i18n="role_farmer"
+          >
+            Farmer / FPO
+          </option>
+
+          <option
+            value="buyer"
+            data-i18n="role_buyer"
+          >
+            Consumer / Buyer
+          </option>
+
+          <option
+            value="logistics"
+            data-i18n="role_logistics"
+          >
+            Logistics Partner Admin
+          </option>
+
         </select>
 
+
         <div class="field-row">
-          <div><label data-i18n="label_full_name">Full name</label><input type="text" id="reg-name" required></div>
-          <div><label data-i18n="label_phone">Phone</label><input type="text" id="reg-phone"></div>
+
+          <div>
+
+            <label data-i18n="label_full_name">
+              Full name
+            </label>
+
+            <input
+              type="text"
+              id="reg-name"
+              required
+            >
+
+          </div>
+
+
+          <div>
+
+            <label data-i18n="label_phone">
+              Phone
+            </label>
+
+            <input
+              type="text"
+              id="reg-phone"
+            >
+
+          </div>
+
         </div>
 
-        <label data-i18n="label_email">Email</label><input type="email" id="reg-email" required>
-        <label data-i18n="label_password">Password</label><input type="password" id="reg-password" required minlength="6">
+
+        <label data-i18n="label_email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="reg-email"
+          required
+        >
+
+
+        <label data-i18n="label_password">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="reg-password"
+          required
+          minlength="6"
+        >
+
+
+        <!-- FARMER FIELDS -->
 
         <div id="farmer-fields" style="display:none;">
-          <label data-i18n="label_farm_name">Farm / FPO name</label><input type="text" id="reg-farm-name">
-          <label data-i18n="label_pickup_location">Pickup location</label><input id="reg-pickup-location" data-i18n-placeholder="placeholder_pickup" placeholder="Village, District">
+
+          <label data-i18n="label_farm_name">
+            Farm / FPO name
+          </label>
+
+          <input
+            type="text"
+            id="reg-farm-name"
+          >
+
+
+          <label data-i18n="label_pickup_location">
+            Pickup location
+          </label>
+
+          <input
+            id="reg-pickup-location"
+            data-i18n-placeholder="placeholder_pickup"
+            placeholder="Village, District"
+          >
+
         </div>
+
+
+        <!-- BUYER FIELDS -->
 
         <div id="buyer-fields" style="display:none;">
-          <label data-i18n="label_buyer_type">Buyer type</label>
+
+          <label data-i18n="label_buyer_type">
+            Buyer type
+          </label>
+
           <select id="reg-buyer-type">
-            <option value="individual" data-i18n="buyer_individual">Individual / Household</option>
-            <option value="bulk" data-i18n="buyer_bulk">Bulk Buyer / Business</option>
+
+            <option
+              value="individual"
+              data-i18n="buyer_individual"
+            >
+              Individual / Household
+            </option>
+
+            <option
+              value="bulk"
+              data-i18n="buyer_bulk"
+            >
+              Bulk Buyer / Business
+            </option>
+
           </select>
-          <label data-i18n="label_business_name">Business name</label><input type="text" id="reg-business-name">
-          <label data-i18n="label_default_location">Default delivery location</label><input id="reg-default-location" data-i18n-placeholder="placeholder_defaultloc" placeholder="Area, City">
+
+
+          <label data-i18n="label_business_name">
+            Business name
+          </label>
+
+          <input
+            type="text"
+            id="reg-business-name"
+          >
+
+
+          <label data-i18n="label_default_location">
+            Default delivery location
+          </label>
+
+          <input
+            id="reg-default-location"
+            data-i18n-placeholder="placeholder_defaultloc"
+            placeholder="Area, City"
+          >
+
         </div>
 
-        <button class="btn full" style="margin-top:20px;" type="submit" data-i18n="btn_register">Create account</button>
+
+        <button
+          class="btn full"
+          style="margin-top:20px;"
+          type="submit"
+          data-i18n="btn_register"
+        >
+          Create account
+        </button>
+
         <div id="register-error"></div>
+
       </form>
+
     </div>
+
+
+    <!-- HOW FARM CIRCLE WORKS -->
 
     <div class="card">
-      <h3 data-i18n="how_title">How Farm Circle works</h3>
-      <ol class="small-note" style="line-height:2;">
-        <li data-i18n="how1">Farmers and FPOs create an account and list their products.</li>
-        <li data-i18n="how2">Consumers browse available products directly from farmers.</li>
-        <li data-i18n="how3">Buyers add products to their cart and place an order.</li>
-        <li data-i18n="how4">The platform manages pickup and delivery through logistics partners.</li>
-        <li data-i18n="how5">Farmers receive orders directly without unnecessary middlemen.</li>
+
+      <h3 data-i18n="how_title">
+        How Farm Circle works
+      </h3>
+
+      <ol
+        class="small-note"
+        style="line-height:2;"
+      >
+
+        <li data-i18n="how1">
+          Farmers and FPOs create an account and list their products.
+        </li>
+
+        <li data-i18n="how2">
+          Consumers browse available products directly from farmers.
+        </li>
+
+        <li data-i18n="how3">
+          Buyers add products to their cart and place an order.
+        </li>
+
+        <li data-i18n="how4">
+          The platform manages pickup and delivery through logistics partners.
+        </li>
+
+        <li data-i18n="how5">
+          Farmers receive orders directly without unnecessary middlemen.
+        </li>
+
       </ol>
+
     </div>
+
   </div>
 
-  <section class="card" style="margin-bottom:20px;">
-      <span class="eyebrow" data-i18n="support_tag">FARMER SUPPORT</span>
-      <h2 data-i18n="support_title">Need help joining Farm Circle?</h2>
-      <p class="small-note" style="font-size:.95rem; line-height:1.7;" data-i18n="support_description">Our team can help farmers understand the platform, create an account and get started with Farm Circle.</p>
-      <div class="grid grid-2" style="margin-top:18px;">
-        <div style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--soft-2);">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" height="21px" viewBox="0 -960 960 960" width="25px" fill="#173322"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg><span data-i18n="helpline_title"> Farmer Helpline</span></h3>
-          <p class="small-note" data-i18n="helpline_description">Call us if you need help with registration or using Farm Circle.</p>
-          <a class="btn full" href="tel:1234" data-i18n="btn_call">Call 1234</a>
-        </div>
-        <div style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--soft-2);">
-          <h3><svg xmlns="http://www.w3.org/2000/svg" height="21px" viewBox="0 -960 960 960" width="25px" fill="#173322"><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></svg><span data-i18n="agent_title"> Agent-Assisted Registration</span></h3>
-          <p class="small-note" data-i18n="agent_description">Having trouble creating your account? Contact our helpline and Farm Circle can send an agent to assist you with account creation and onboarding.</p>
-          <a class="btn secondary full" href="tel:1234" data-i18n="btn_agent">Request an Agent</a>
-        </div>
+
+  <!-- FARMER SUPPORT -->
+
+  <section
+    class="card"
+    style="margin-bottom:20px;"
+  >
+
+    <span
+      class="eyebrow"
+      data-i18n="support_tag"
+    >
+      FARMER SUPPORT
+    </span>
+
+
+    <h2 data-i18n="support_title">
+      Need help joining Farm Circle?
+    </h2>
+
+
+    <p
+      class="small-note"
+      style="font-size:.95rem; line-height:1.7;"
+      data-i18n="support_description"
+    >
+      Our team can help farmers understand the platform,
+      create an account and get started with Farm Circle.
+    </p>
+
+
+    <div
+      class="grid grid-2"
+      style="margin-top:18px;"
+    >
+
+      <div
+        style="
+          padding:18px;
+          border:1px solid var(--line);
+          border-radius:14px;
+          background:var(--soft-2);
+        "
+      >
+
+        <h3>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="21px"
+            viewBox="0 -960 960 960"
+            width="25px"
+            fill="#173322"
+          >
+
+            <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/>
+
+          </svg>
+
+          <span data-i18n="helpline_title">
+            Farmer Helpline
+          </span>
+
+        </h3>
+
+
+        <p
+          class="small-note"
+          data-i18n="helpline_description"
+        >
+          Call us if you need help with registration
+          or using Farm Circle.
+        </p>
+
+
+        <a
+          class="btn full"
+          href="tel:1234"
+          data-i18n="btn_call"
+        >
+          Call 1234
+        </a>
+
       </div>
-    </section>
+
+
+      <div
+        style="
+          padding:18px;
+          border:1px solid var(--line);
+          border-radius:14px;
+          background:var(--soft-2);
+        "
+      >
+
+        <h3>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="21px"
+            viewBox="0 -960 960 960"
+            width="25px"
+            fill="#173322"
+          >
+
+            <path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/>
+
+          </svg>
+
+          <span data-i18n="agent_title">
+            Agent-Assisted Registration
+          </span>
+
+        </h3>
+
+
+        <p
+          class="small-note"
+          data-i18n="agent_description"
+        >
+          Having trouble creating your account?
+          Contact our helpline and Farm Circle can send
+          an agent to assist you with account creation
+          and onboarding.
+        </p>
+
+
+        <a
+          class="btn secondary full"
+          href="tel:1234"
+          data-i18n="btn_agent"
+        >
+          Request an Agent
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </div>
 
-<footer data-i18n="footer">Farm Circle — Connecting farmers directly with consumers.</footer>
+
+<footer data-i18n="footer">
+  Farm Circle — Connecting farmers directly with consumers.
+</footer>
+
+
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/lang.js"></script>
+
 </body>
 </html>
