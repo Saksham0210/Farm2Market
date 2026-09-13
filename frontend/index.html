@@ -10,6 +10,7 @@
 <body>
 
 <div class="topbar">
+
   <div class="brand">
     <span class="mark">🌱</span>
     <span data-i18n="brand">Farm Circle</span>
@@ -29,10 +30,13 @@
       <option value="pa">ਪੰਜਾਬੀ</option>
     </select>
   </nav>
+
 </div>
 
 
 <div class="shell">
+
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -53,11 +57,14 @@
   </section>
 
 
+  <!-- LOGIN / REGISTER -->
+
   <div class="grid grid-2" style="align-items:flex-start;">
 
     <div class="card">
 
       <div class="tabs">
+
         <div
           class="tab active"
           data-tab="login"
@@ -73,6 +80,7 @@
         >
           Create account
         </div>
+
       </div>
 
 
@@ -153,6 +161,8 @@
         </select>
 
 
+        <!-- BASIC DETAILS -->
+
         <div class="field-row">
 
           <div>
@@ -209,9 +219,104 @@
         >
 
 
-        <!-- FARMER FIELDS -->
+        <!-- ================================= -->
+        <!-- FARMER FIELDS                     -->
+        <!-- ================================= -->
 
-        <div id="farmer-fields" style="display:none;">
+        <div
+          id="farmer-fields"
+          style="display:none;"
+        >
+
+          <!-- AADHAAR VERIFICATION -->
+
+          <div
+            style="
+              padding:14px;
+              margin-bottom:16px;
+              border:1px solid var(--line);
+              border-radius:12px;
+              background:var(--soft-2);
+            "
+          >
+
+            <label>
+              Aadhaar Number
+            </label>
+
+            <input
+              type="text"
+              id="reg-aadhaar"
+              maxlength="12"
+              inputmode="numeric"
+              placeholder="Enter 12-digit Aadhaar number"
+            >
+
+
+            <button
+              type="button"
+              class="btn secondary full"
+              id="send-otp-btn"
+              style="margin-top:10px;"
+            >
+              Send OTP
+            </button>
+
+
+            <!-- OTP SECTION -->
+
+            <div
+              id="otp-section"
+              style="display:none; margin-top:14px;"
+            >
+
+              <div class="success-box">
+
+                <strong>
+                  Demo OTP: 123456
+                </strong>
+
+                <div class="small-note">
+                  Enter the OTP to verify your Aadhaar.
+                </div>
+
+              </div>
+
+
+              <label style="margin-top:12px;">
+                Enter OTP
+              </label>
+
+              <input
+                type="text"
+                id="reg-otp"
+                maxlength="6"
+                inputmode="numeric"
+                placeholder="123456"
+              >
+
+
+              <button
+                type="button"
+                class="btn secondary full"
+                id="verify-otp-btn"
+                style="margin-top:10px;"
+              >
+                Verify OTP
+              </button>
+
+
+              <div
+                id="otp-message"
+                style="margin-top:10px;"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FARM DETAILS -->
 
           <label data-i18n="label_farm_name">
             Farm / FPO name
@@ -236,9 +341,14 @@
         </div>
 
 
-        <!-- BUYER FIELDS -->
+        <!-- ================================= -->
+        <!-- BUYER FIELDS                      -->
+        <!-- ================================= -->
 
-        <div id="buyer-fields" style="display:none;">
+        <div
+          id="buyer-fields"
+          style="display:none;"
+        >
 
           <label data-i18n="label_buyer_type">
             Buyer type
@@ -286,6 +396,8 @@
         </div>
 
 
+        <!-- REGISTER BUTTON -->
+
         <button
           class="btn full"
           style="margin-top:20px;"
@@ -302,7 +414,9 @@
     </div>
 
 
-    <!-- HOW FARM CIRCLE WORKS -->
+    <!-- ================================= -->
+    <!-- HOW FARM CIRCLE WORKS             -->
+    <!-- ================================= -->
 
     <div class="card">
 
@@ -342,7 +456,9 @@
   </div>
 
 
-  <!-- FARMER SUPPORT -->
+  <!-- ================================= -->
+  <!-- FARMER SUPPORT                    -->
+  <!-- ================================= -->
 
   <section
     class="card"
@@ -376,6 +492,8 @@
       class="grid grid-2"
       style="margin-top:18px;"
     >
+
+      <!-- HELPLINE -->
 
       <div
         style="
@@ -426,6 +544,8 @@
 
       </div>
 
+
+      <!-- AGENT ASSISTANCE -->
 
       <div
         style="
