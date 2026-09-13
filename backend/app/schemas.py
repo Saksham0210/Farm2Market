@@ -23,6 +23,15 @@ class UserRegister(BaseModel):
     password: str = Field(min_length=6)
     role: UserRole
 
+    # farmer demo Aadhaar verification
+    aadhaar_demo_verified: bool = False
+
+    # farmer-specific
+    farm_or_fpo_name: Optional[str] = None
+    pickup_location: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+
     # farmer-specific
     farm_or_fpo_name: Optional[str] = None
     pickup_location: Optional[str] = None
