@@ -23,7 +23,6 @@ function renderRail(status){
 // ---------------- FARMER ----------------
 async function initFarmer(){
   document.getElementById("farmer-view").style.display = "block";
-  await loadFarmerDefaults();
 
   document.getElementById("produce-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -42,10 +41,9 @@ async function initFarmer(){
           pickup_location: document.getElementById("p-location").value,
         },
       });
-     msg.innerHTML = `<div class="success-box">Listed on the platform.</div>`;
-document.getElementById("produce-form").reset();
-await loadFarmerDefaults();
-loadMyProduce();
+      msg.innerHTML = `<div class="success-box">Listed on the platform.</div>`;
+      document.getElementById("produce-form").reset();
+      loadMyProduce();
     } catch(err){
       msg.innerHTML = `<div class="error-box">${err.message}</div>`;
     }
@@ -53,18 +51,6 @@ loadMyProduce();
 
   loadMyProduce();
 }
-async function loadFarmerDefaults(){
-  try{
-    const items = await apiRequest("/produce/mine");
-
-    if(items.length && items[0].pickup_location){
-      document.getElementById("p-location").value = items[0].pickup_location;
-    }
-  } catch(err){
-    console.error("Could not load farmer defaults:", err);
-  }
-}
-
 
 async function loadMyProduce(){
   const list = document.getElementById("my-produce-list");
