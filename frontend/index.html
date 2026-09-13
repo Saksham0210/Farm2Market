@@ -6,7 +6,9 @@
 <title data-i18n="page_title">Farm Circle — Farmer to Consumer</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
 <div class="topbar">
   <div class="brand"><span class="mark">🌱</span><span data-i18n="brand">Farm Circle</span></div>
   <nav>
@@ -29,21 +31,31 @@
   </nav>
 </div>
 
+
 <div class="shell">
+
+  <!-- HERO -->
+
   <section class="hero">
     <span class="eyebrow" data-i18n="hero_eyebrow">FARM TO HOME</span>
     <h1 data-i18n="hero_h1">Fresh products directly from farmers.</h1>
     <p data-i18n="hero_description">Farm Circle connects farmers and FPOs directly with consumers and bulk buyers. Farmers can list their products while buyers can browse products, place orders and get them delivered.</p>
   </section>
 
-  
 
   <div class="grid grid-2" style="align-items:flex-start;">
+
+    <!-- LOGIN / REGISTER CARD -->
+
     <div class="card">
+
       <div class="tabs">
         <div class="tab active" data-tab="login" data-i18n="tab_login">Log in</div>
         <div class="tab" data-tab="register" data-i18n="tab_register">Create account</div>
       </div>
+
+
+      <!-- LOGIN -->
 
       <form id="login-form">
         <label data-i18n="label_email">Email</label>
@@ -52,7 +64,11 @@
         <input type="password" id="login-password" data-i18n-placeholder="placeholder_password" required placeholder="••••••••">
         <button class="btn full" data-i18n="btn_login" style="margin-top:20px;" type="submit">Log in</button>
         <div id="login-error"></div>
+
       </form>
+
+
+      <!-- REGISTER -->
 
       <form id="register-form" style="display:none;">
         <label data-i18n="label_role">I am a</label>
@@ -61,6 +77,7 @@
           <option value="buyer" data-i18n="role_buyer">Consumer / Buyer</option>
           <option value="logistics" data-i18n="role_logistics">Logistics Partner Admin</option>
         </select>
+
 
         <div class="field-row">
           <div><label data-i18n="label_full_name">Full name</label><input type="text" id="reg-name" required></div>
@@ -75,6 +92,9 @@
           <label data-i18n="label_pickup_location">Pickup location</label><input id="reg-pickup-location" data-i18n-placeholder="placeholder_pickup" placeholder="Village, District">
         </div>
 
+
+        <!-- BUYER FIELDS -->
+
         <div id="buyer-fields" style="display:none;">
           <label data-i18n="label_buyer_type">Buyer type</label>
           <select id="reg-buyer-type">
@@ -87,8 +107,13 @@
 
         <button class="btn full" style="margin-top:20px;" type="submit" data-i18n="btn_register">Create account</button>
         <div id="register-error"></div>
+
       </form>
+
     </div>
+
+
+    <!-- HOW FARM CIRCLE WORKS -->
 
     <div class="card">
       <h3 data-i18n="how_title">How Farm Circle works</h3>
@@ -99,7 +124,9 @@
         <li data-i18n="how4">The platform manages pickup and delivery through logistics partners.</li>
         <li data-i18n="how5">Farmers receive orders directly without unnecessary middlemen.</li>
       </ol>
+
     </div>
+
   </div>
 
   <section class="card" style="margin-bottom:20px;">
@@ -118,7 +145,7 @@
           <a class="btn secondary full" href="tel:1234" data-i18n="btn_agent">Request an Agent</a>
         </div>
       </div>
-    </section>
+  </section>
 
 </div>
 
